@@ -1,0 +1,53 @@
+<?page title="โปรแกรมคัดหวย"?>
+<zk>
+    <style dynamic="true">
+        .z-toolbar a, .z-toolbar a:visited, .z-toolbar a:hover {
+            background-color:transparent;
+            border:0 none;
+        }
+        .vista {
+            background:#000000 url(/zkdemo/widgets/menu/toolbar/img/bar.png) repeat-x 0 0;
+            color:white;
+            padding-top:7px;
+        }
+        .p-vista .z-panel-children {
+            background-color: #008BB6;
+            border-bottom: 0 none;
+        }
+    </style>
+	<window id="mainWin" apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.maxicrop.lottery.vm.MainViewModel')"
+		width="100%" height="100%">
+		<toolbar id="tb" height="30px" align="end">
+            <toolbarbutton image="/img/en_EN_24x24.png"
+            	onClick="@global-command('changeLocale', lang='en')" />
+            <textbox id="en" value="en" visible="false"></textbox>	
+            <toolbarbutton image="/img/th_TH_24x24.png" 
+            	onClick="@global-command('changeLocale', lang='th')" />           
+        </toolbar>
+		<borderlayout width="100%" height="100%">
+			<north height="87px">
+				<hlayout>
+					<button image="/img/shopping_basket_64x64.png"
+						label="${labels.app.add_lotto}" vflex="true" orient="vertical" mold="trendy"
+						onClick="@command('addNumberWindow')" autodisable="self">
+					</button>
+					<button image="/img/cardboard_box_64x64.png"
+						label="สรุปยอดรวมทุกเครื่อง" vflex="true" orient="vertical"
+						autodisable="self">
+					</button>
+					<button image="/img/cash_64x64.png" label="สรุปยอด"
+						vflex="true" orient="vertical" autodisable="self">
+					</button>
+				</hlayout>
+			</north>
+			<center>
+				<borderlayout>
+					<west>West</west>
+					<center>Center</center>
+					<east>East</east>
+				</borderlayout>
+			</center>
+		</borderlayout>
+	</window>
+</zk>

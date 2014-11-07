@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk>
+	<!-- [Optional]
+	Uncomment if you want to defines the application's name 
+	
+	<preference>
+		<name>org.zkoss.zk.ui.WebApp.name</name>
+		<value>LottoPlus</value>
+	</preference>
+	-->
+	<device-config>
+		<device-type>ajax</device-type>
+		<timeout-uri>/timeout.zul</timeout-uri><!-- An empty URL can cause the 
+			browser to reload the same URL -->
+	</device-config>
+	<system-config>
+		<crawlable>false</crawlable>
+		<disable-event-thread />
+		<file-size-threshold>1024</file-size-threshold>
+		<max-spare-threads>100</max-spare-threads>
+		<max-suspended-threads>100</max-suspended-threads>
+		<max-upload-size>5120</max-upload-size>
+		<max-process-time>3000</max-process-time>
+		<response-charset>UTF-8</response-charset>
+		<upload-charset>UTF-8</upload-charset>
+	</system-config>
+	<library-property>
+		<name>org.zkoss.web.preferred.locale</name>
+		<value>th</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zul.Button.mold</name>
+		<value>trendy</value>
+	</library-property>	
+</zk>

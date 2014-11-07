@@ -1,0 +1,56 @@
+<?page title="กรอกตัวเลข" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="add_lotto" title="กรอกตัวเลข" border="none"
+		closable="true" width="100%" height="100%" hflex="1" vflex="1"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.maxicrop.lottery.vm.add.AddNewNumberViewModel')"
+		onCancel="add_lotto.detach()">
+		<borderlayout>
+			<west collapsible="true" splittable="true" width="215px" 
+				autoscroll="true">
+				<include src="/layout/add/add_customer.zul" />
+			</west>
+			<east collapsible="true" splittable="true" width="215px">
+				<label value="East"></label>
+			</east>
+			<center autoscroll="true">
+				<hlayout>
+					<vlayout>
+						<include
+							src="/layout/add/add_three_up_panel.zul" />
+						<include
+							src="/layout/add/add_three_down_panel.zul" />
+					</vlayout>
+					<vlayout>
+						<include src="/layout/add/add_two_up_panel.zul" />
+						<include
+							src="/layout/add/add_two_down_panel.zul" />
+					</vlayout>
+					<vlayout>
+						<include src="/layout/add/add_one_up_panel.zul" />
+						<include
+							src="/layout/add/add_one_down_panel.zul" />
+					</vlayout>
+				</hlayout>
+			</center>
+			<south height="15%">
+				<grid width="100%">
+					<columns>
+						<column label="ตัวเลข" />
+						<column label="ราคา" />
+						<column label="บน-ล่าง/กลับ" />
+						<column label="ราคา" />
+					</columns>
+					<rows>
+						<row>
+							<intbox tooltiptext="ใส่ตัวเลข" />
+							<intbox tooltiptext="ใส่ราคา" />
+							<label value="กลับ" />
+							<intbox tooltiptext="ใส่ราคา" />
+						</row>
+					</rows>
+				</grid>
+			</south>
+		</borderlayout>
+	</window>
+</zk>
